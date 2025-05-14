@@ -6,7 +6,7 @@
 
 ## Ferramentas
 
-Antes de começar, certifique-se de que os seguintes sistemas estejam instalados em seu computador.
+Antes de começar, certifique-se de que as seguintes ferramentas estejam instaladas em seu computador.
 
 - [git](https://git-scm.com/)
 - [Node.js](https://nodejs.org/en/)
@@ -17,7 +17,7 @@ Antes de começar, certifique-se de que os seguintes sistemas estejam instalados
 >
 > **Obs.2:** Para verificar as versões do git, Node.js e npm instaladas em seu computador, execute o comando `git --version && node --version && npm --version` em seu terminal de linha de comando.
 >
-> **Obs.3:** Recomendamos a utilização do Visual Studio Code mas pode ser qualquer IDE de preferência.
+> **Obs.3:** Recomendamos a utilização do Visual Studio Code, entretanto, também poderá ser utilizada uma IDE de sua preferência.
 >
 > **Obs.4:** Caso utilize o Visual Studio Code, recomendamos a instalação da Extensão `Prettier - Code formatter`.
 
@@ -53,7 +53,7 @@ Antes de começar, certifique-se de que os seguintes sistemas estejam instalados
 1. Na raiz do projeto, execute o comando `npm init -y` para inicializar um projeto npm, isso é feito para que o projeto contenha um arquivo `package.json`
 2. Na raiz do projeto, execute o comando `npm install cypress --save-dev` (ou `npm i cypress -D` para a versão curta).
 3. Execute o comando `npx cypress open` para abrir o Cypress pela primeira vez, o ambiente e2e de testes já está configurado.
-4. Este será o ambiente de testes Cypress, antes de inciar os testes feche o _Cypress_App_ e faça a leitura das instruções abaixo.
+4. Este será o ambiente de testes Cypress, antes de iniciar os testes feche o _Cypress_App_ e faça a leitura das instruções abaixo.
 
 > **Obs.:** Quando o _Cypress App_ é iniciado pela primeira vez sem ser previamente configurado, o Cypress mostra opções de inicialização recomendadas.
 
@@ -61,7 +61,7 @@ Antes de começar, certifique-se de que os seguintes sistemas estejam instalados
 
 ## Explicando o teste exemplo - Edital Simples
 
-1. Abra o arquivo `edital-simples.cy.ts`, este é um teste e2e(end to end) que cria um Edital Simples no sistema.
+1. Abra o arquivo `edital-simples.cy.ts`, este é um teste e2e (end to end) que cria um Edital Simples no sistema.
     - O bloco `describe` define a suite de testes e o bloco `it` define o caso de teste.
     - `cy.typelogin` é uma função customizada cypress criada dentro do arquivo `/support/commands.ts`.
     - `getCurrentDateTime()` é uma função para trazer a data atual, podendo ser utilizada para definir datas anteriores ou posteriores para auxílio nos testes.
@@ -77,7 +77,7 @@ Antes de começar, certifique-se de que os seguintes sistemas estejam instalados
 1. Em Informações do Edital
 - Em Identificação do Edital
     - Titulo do Edital
-    > Utilizar: [grupoalunos-numero] [E.S.] [código]/[ano] - [nomealuno-sobrenomealuno]
+    > Utilizar: `[grupoalunos-numero] [E.S.] [código]/[ano] [nomealuno-sobrenomealuno]`
     >
     > Exemplo: Grupo-01 E.S. 005/2025 joão-neves
     >
@@ -87,7 +87,7 @@ Antes de começar, certifique-se de que os seguintes sistemas estejam instalados
     >
     > [código]: Código de 3 digitos (000 a 999)
     >
-    > [ano]: Ano de crição do Edital
+    > [ano]: Ano de criação do Edital
     >
     > [nomealuno-sobrenomealuno]: nome e sobrenome do acadêmico
 - Restrições
@@ -131,7 +131,7 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
 1. Em Informações do Edital
 - Em Identificação do Edital
     - Titulo do Edital
-    > Utilizar: [grupoalunos-numero] [E.M.] [código]/[ano] - [nomealuno-sobrenomealuno]
+    > Utilizar: `[grupoalunos-numero] [E.M.] [código]/[ano] [nomealuno-sobrenomealuno]`
     >
     > Exemplo: Grupo-01 E.M. 005/2025 joão-neves
     >
@@ -141,7 +141,7 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
     >
     > [código]: Código de 3 digitos (000 a 999)
     >
-    > [ano]: Ano de crição do Edital
+    > [ano]: Ano de criação do Edital
     >
     > [nomealuno-sobrenomealuno]: nome e sobrenome do acadêmico
 - Em Restrições
@@ -188,17 +188,17 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
 1. Em Informações do Edital
 - Em Identificação do Edital
     - Titulo do Edital
-    > Utilizar: [grupoalunos-numero] [E.C.] [código]/[ano] - [nomealuno-sobrenomealuno]
+    > Utilizar: `[grupoalunos-numero] [E.C.] [código]/[ano] [nomealuno-sobrenomealuno]`
     >
     > Exemplo: Grupo-01 E.C. 005/2025 joão-neves
     >
     > [grupoalunos-numero]: Número do Grupo definido pelo Professor (01 a 99)
     >
-    > [E.C.]: Edital Médio
+    > [E.C.]: Edital Completo
     >
     > [código]: Código de 3 digitos (000 a 999)
     >
-    > [ano]: Ano de crição do Edital
+    > [ano]: Ano de criação do Edital
     >
     > [nomealuno-sobrenomealuno]: nome e sobrenome do acadêmico
 - Em Restrições
