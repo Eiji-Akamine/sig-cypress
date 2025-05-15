@@ -29,7 +29,7 @@ describe('Sistema Integrado de Gestão para Fundações de Amparo a Pesquisas', 
     cy.get('[data-cy="chamadaUnsaved.termino"]').type(
       getCurrentDateTime({ addYears: 1 }),
     ); //Preenche o campo "Término" do Período de Submissão com a data do dia de hoje + 1 ano
-    cy.get('.e5vr9t32 > .MuiButton-contained').click(); //Clica no botão "Salvar" para salvar as informações do Período de Submissão
+    cy.get('[data-cy="chamada-confirmar"]').click(); //Clica no botão "Salvar" para salvar as informações do Período de Submissão
     cy.get('[data-cy="orcamento"]').click(); //Clica na aba Orçamento para exibir as opções de Orçamento
     cy.get('[data-cy="programa"]').click(); //Clica em Programa para seguir para a página de Programa
     cy.get('[data-cy="programaId"]').click(); //Clica no campo de seleção de Programa
