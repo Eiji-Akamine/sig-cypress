@@ -2,7 +2,7 @@
 
 # Pré-requisitos
 
- Para a realização do trabalho, serão  necessários conhecimentos prévios e a instalação de algumas ferramentas, listadas abaixo.
+Para a realização do trabalho, serão necessários conhecimentos prévios e a instalação de algumas ferramentas, listadas abaixo.
 
 ## Ferramentas
 
@@ -13,7 +13,7 @@ Antes de começar, certifique-se de que as seguintes ferramentas estejam instala
 - npm
 - [Visual Studio Code](https://code.visualstudio.com/)
 
-> **Obs.1:** Ao instalar o Node.js, o npm é instalado junto. 
+> **Obs.1:** Ao instalar o Node.js, o npm é instalado junto.
 >
 > **Obs.2:** Para verificar as versões do git, Node.js e npm instaladas em seu computador, execute o comando `git --version && node --version && npm --version` em seu terminal de linha de comando.
 >
@@ -30,10 +30,10 @@ Antes de começar, certifique-se de que as seguintes ferramentas estejam instala
 - Linha de comando
 - git
 
-# Fork e clone do projeto [OBS: Revisar e definir] 
+# Fork e clone do projeto [OBS: Revisar e definir]
 
 1. Abra o navegador e visite a URL [\[PRIVADO solicitar acesso\]](https://github.com/Eiji-Akamine/sig-cypress)
-2. Faça um [fork]((https://docs.github.com/en/get-started/quickstart/fork-a-repo)) do projeto.
+2. Faça um [fork](<(https://docs.github.com/en/get-started/quickstart/fork-a-repo)>) do projeto.
 
 > É importante que você trabalhe em seu fork, para que ao final do trabalho, você possa executar os testes em um _workflow_ de integração contínua.
 
@@ -47,7 +47,6 @@ Antes de começar, certifique-se de que as seguintes ferramentas estejam instala
 
 5. Após clonar o projeto, acesse o diretório recém-clonado (`cd sig-cypress/`).
 
-
 # Instalação e inicialização do [Cypress](https://cypress.io)
 
 1. Na raiz do projeto, execute o comando `npm init -y` para inicializar um projeto npm, isso é feito para que o projeto contenha um arquivo `package.json`
@@ -57,14 +56,26 @@ Antes de começar, certifique-se de que as seguintes ferramentas estejam instala
 
 > **Obs.:** Quando o _Cypress App_ é iniciado pela primeira vez sem ser previamente configurado, o Cypress mostra opções de inicialização recomendadas.
 
+# Modulos Adicionais [Cypress Real Events](https://github.com/dmtrKovalenko/cypress-real-events?tab=readme-ov-file#cyrealtype)
+
+Para instalar o real-events:
+
+> npm install cypress-real-events
+>
+> yarn add cypress-real-events
+
+E no arquivo tsconfig.json adicione o real events:
+
+> "types": ["cypress", "node", "cypress-real-events"]
+
 # Começando o trabalho
 
 ## Explicando o teste exemplo - Edital Simples
 
 1. Abra o arquivo `edital-simples.cy.ts`, este é um teste e2e (end to end) que cria um Edital Simples no sistema.
-    - O bloco `describe` define a suite de testes e o bloco `it` define o caso de teste.
-    - `cy.typelogin` é uma função customizada cypress criada dentro do arquivo `/support/commands.ts`.
-    - `getCurrentDateTime()` é uma função para trazer a data atual, podendo ser utilizada para definir datas anteriores ou posteriores para auxílio nos testes.
+   - O bloco `describe` define a suite de testes e o bloco `it` define o caso de teste.
+   - `cy.typelogin` é uma função customizada cypress criada dentro do arquivo `/support/commands.ts`.
+   - `getCurrentDateTime()` é uma função para trazer a data atual, podendo ser utilizada para definir datas anteriores ou posteriores para auxílio nos testes.
 
 > Obs: Este arquivo foi comentado linha a linha para facilitar a compreensão básica do funcionamento do teste com cypress.
 
@@ -75,8 +86,9 @@ Antes de começar, certifique-se de que as seguintes ferramentas estejam instala
 ## Teste de E.S. (Edital Simples)
 
 1. Em Informações do Edital
+
 - Em Identificação do Edital
-    - Titulo do Edital
+  - Titulo do Edital
     > Utilizar: `[grupoalunos-numero] [E.S.] [código]/[ano] [nomealuno-sobrenomealuno]`
     >
     > Exemplo: Grupo-01 E.S. 005/2025 joão-neves
@@ -91,20 +103,24 @@ Antes de começar, certifique-se de que as seguintes ferramentas estejam instala
     >
     > [nomealuno-sobrenomealuno]: nome e sobrenome do acadêmico
 - Restrições
-    - Opções de Restrições [Checkbox]
+  - Opções de Restrições [Checkbox]
     > Marcar a opção "Definir a duração do projeto em meses" e adicionar uma duração em quantidade de meses.
-2. Em Cronograma
-- Em Período de Submissão
-    - Adicionar a data inicial e final (formato: DD/MM/YYYY hh:mm:ss).
-    > A data final sempre deve ser posterior a data inicial.
-3. Em Orçamento
-- Em Programa
-    - Adicionar um programa a este Edital
-    > Selecionar um dos programas da `Caixa de Seleção`. 
-4. Finalizar
-    - Clicar no botão Salvar.
-    - Clicar no botão Finalizar.
 
+2. Em Cronograma
+
+- Em Período de Submissão
+  - Adicionar a data inicial e final (formato: DD/MM/YYYY hh:mm:ss).
+    > A data final sempre deve ser posterior a data inicial.
+
+3. Em Orçamento
+
+- Em Programa
+  - Adicionar um programa a este Edital
+    > Selecionar um dos programas da `Caixa de Seleção`.
+
+4. Finalizar
+   - Clicar no botão Salvar.
+   - Clicar no botão Finalizar.
 
 **Resultado esperado:**
 
@@ -114,7 +130,7 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
 
 1. Abra o arquivo `edital-simples.cy.ts` e edite `[URL do sistema]`, `[E-mail do usuário]` e `[Senha do usuário]` estes dados serão informados pelo Professor.
 2. No mesmo arquivo edite `Titulo do Edital` conforme o padrão descrito na solicitação.
-3. Salve o arquivo, abra o terminal e execute o comando `npx cypress open`, clique em `E2E Testing`, escolha o navegador de sua preferência e clique em `Start E2E Testing`. 
+3. Salve o arquivo, abra o terminal e execute o comando `npx cypress open`, clique em `E2E Testing`, escolha o navegador de sua preferência e clique em `Start E2E Testing`.
 4. Uma janela do navegador escolhido será aberta, em seguida clique em: `edital-simples.cy.ts` e então o teste será iniciado, acompanhe a execução do teste pelo Cypress que realizará a criação de um Edital Simples no sistema.
 
 > Obs: Diante da leitura e compreensão básica do teste `edital-simples.cy.ts` e do texto da solicitação agora vamos ao trabalho.
@@ -129,8 +145,9 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
 ## Teste de E.M. (Edital Médio)
 
 1. Em Informações do Edital
+
 - Em Identificação do Edital
-    - Titulo do Edital
+  - Titulo do Edital
     > Utilizar: `[grupoalunos-numero] [E.M.] [código]/[ano] [nomealuno-sobrenomealuno]`
     >
     > Exemplo: Grupo-01 E.M. 005/2025 joão-neves
@@ -145,32 +162,39 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
     >
     > [nomealuno-sobrenomealuno]: nome e sobrenome do acadêmico
 - Em Restrições
-    - Opções de Restrições [Checkbox]
+  - Opções de Restrições [Checkbox]
     > Marcar a opção "Definir a duração do projeto em meses" e adicionar uma duração em quantidade de meses.
     >
     > Marcar a opção "Pesquisador pode submeter mais de uma proposta".
 - Em Termo de Aceite
-    - Adicionar um texto de Termo de Aceite
+  - Adicionar um texto de Termo de Aceite
 - Em Texto do Edital
-    - Adicionar um Texto do Edital
+  - Adicionar um Texto do Edital
 - Em Abrangência
-    - Adicionar mais de duas Abrangências (Escolha de preferência)
+  - Adicionar mais de duas Abrangências (Escolha de preferência)
+
 2. Em Cronograma
+
 - Em Período de Submissão
-    - Adicionar a data inicial e final.
+  - Adicionar a data inicial e final.
     > formato de data: DD/MM/YYYY hh:mm:ss
     >
     > A data final sempre deve ser posterior a data inicial.
+
 3. Em Orçamento
+
 - Em Programa
-    - Adicionar um Programa a este Edital
-    > Selecionar um dos programas da `Caixa de Seleção`. 
+  - Adicionar um Programa a este Edital
+    > Selecionar um dos programas da `Caixa de Seleção`.
+
 4. Em Perguntas
+
 - Em Indicadores de Produção
-    - Adicionar os três Indicadores de Produção
+  - Adicionar os três Indicadores de Produção
+
 5. Finalizar
-    - Clicar no botão Salvar.
-    - Clicar no botão Finalizar.
+   - Clicar no botão Salvar.
+   - Clicar no botão Finalizar.
 
 **Resultado esperado:**
 
@@ -186,8 +210,9 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
 ## Teste E.C. (Edital Completo):
 
 1. Em Informações do Edital
+
 - Em Identificação do Edital
-    - Titulo do Edital
+  - Titulo do Edital
     > Utilizar: `[grupoalunos-numero] [E.C.] [código]/[ano] [nomealuno-sobrenomealuno]`
     >
     > Exemplo: Grupo-01 E.C. 005/2025 joão-neves
@@ -202,48 +227,60 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
     >
     > [nomealuno-sobrenomealuno]: nome e sobrenome do acadêmico
 - Em Restrições
-    - Opções de Restrições [Checkbox]
+
+  - Opções de Restrições [Checkbox]
     > Marcar a opção "Definir a duração do projeto em meses" e adicionar uma duração em quantidade de meses.
 
-    > Marcar a opção "Pesquisador pode submeter mais de uma proposta" e adicionar uma duração em quantidade de meses.
+  > Marcar a opção "Pesquisador pode submeter mais de uma proposta" e adicionar uma duração em quantidade de meses.
+
 - Em Termo de Aceite
-    - Adicionar um texto de Termo de Aceite
+  - Adicionar um texto de Termo de Aceite
 - Em Texto do Edital
-    - Adicionar um Texto do Edital
+  - Adicionar um Texto do Edital
 - Em Abrangência
-    - Marcar a opção "Todos" em Abrangência
+  - Marcar a opção "Todos" em Abrangência
 - Em Informações Complementares
-    - Adicionar 5 ou mais perguntas de Informações Complementares
+  - Adicionar 5 ou mais perguntas de Informações Complementares
+
 2. Em Cronograma
+
 - Em Período de Submissão
-    - Adicionar a data inicial e final.
+
+  - Adicionar a data inicial e final.
     > formato de data: DD/MM/YYYY hh:mm:ss
 
-    > A data final sempre deve ser posterior a data inicial.
+  > A data final sempre deve ser posterior a data inicial.
+
 3. Em Orçamento
+
 - Em Programa
-    - Adicionar um Programa a este Edital
-    > Selecionar um dos programas da `Caixa de Seleção`. 
-    - Selecionar um Programa com Rubricas
+  - Adicionar um Programa a este Edital
+    > Selecionar um dos programas da `Caixa de Seleção`.
+  - Selecionar um Programa com Rubricas
 - Em Rubricas
-    - Adicionar todas as Rubricas
+  - Adicionar todas as Rubricas
     > Para adicionar uma Rubrica unitária Clique no botão "Adicionar", selecione uma Rubrica e uma Natureza Despesa e clique no botão "Confirmar".
 - Em Faixas de Financiamento
-    - Adicionar pelo menos 5 faixas de Financiamento
+  - Adicionar pelo menos 5 faixas de Financiamento
+
 4. Em Documentos
+
 - Em Documentos da Proposta
-    - Criar pelo menos dois documentos da proposta
+  - Criar pelo menos dois documentos da proposta
 - Em Documentos Pessoais
-    - Adicionar 5 ou mais Documentos Pessoais
+  - Adicionar 5 ou mais Documentos Pessoais
+
 5. Em Perguntas
-    - Adicionar 5 ou mais perguntas de Descrição do Projeto
-    - Adicionar os três Indicadores de Produção
+   - Adicionar 5 ou mais perguntas de Descrição do Projeto
+   - Adicionar os três Indicadores de Produção
 6. Em Bolsas do Edital
+
 - Em Bolsas
-    - Adicionar pelo menos 5 modalidades e níveis de bolsas
+  - Adicionar pelo menos 5 modalidades e níveis de bolsas
+
 7. Finalizar
-    - Clicar no botão Salvar.
-    - Clicar no botão Finalizar.
+   - Clicar no botão Salvar.
+   - Clicar no botão Finalizar.
 
 **Resultado esperado:**
 
@@ -260,7 +297,7 @@ Após a realização do Teste Cypress se espera que o Edital tenha sido criado c
 
 ### Solicitação:
 
-1. A partir do Edital Simples criado com status "em Andamento" (visualizado na Home do sistema: Seção `Editais`), crie um teste de submissão da proposta. 
+1. A partir do Edital Simples criado com status "em Andamento" (visualizado na Home do sistema: Seção `Editais`), crie um teste de submissão da proposta.
 2. O teste Cypress deve entrar na área de criação da proposta, preenchendo todos os campos da Proposta e então realizando a submissão da proposta.
 
 **Resultado esperado:**
@@ -271,7 +308,7 @@ Após a realização do Teste Cypress se espera que a Proposta tenha sido criada
 
 1. Abra o arquivo `submissao-proposta-simples.cy.ts` e edite `[URL do sistema]`, `[E-mail do usuário]` e `[Senha do usuário]` estes dados serão informados pelo Professor.
 2. Edite o comando da `linha 15` alterando para clicar no seu edital simples criado.
-> Obs: Recomendamos extrair elementos utilizando a ferramenta [Seletor Playground Cypress](https://www.youtube.com/watch?v=LmxU-a3J3bk&ab_channel=QAACTION)
+   > Obs: Recomendamos extrair elementos utilizando a ferramenta [Seletor Playground Cypress](https://www.youtube.com/watch?v=LmxU-a3J3bk&ab_channel=QAACTION)
 3. Siga o fluxo, extraindo os elementos para preencher todos os campos da Proposta.
 
 ---
@@ -285,7 +322,7 @@ Após a realização do Teste Cypress se espera que a Proposta tenha sido criada
 
 ### Solicitação:
 
-1. A partir do Edital Médio criado com status "em Andamento" (visualizado na Home do sistema: Seção `Editais`), crie um teste de submissão da proposta. 
+1. A partir do Edital Médio criado com status "em Andamento" (visualizado na Home do sistema: Seção `Editais`), crie um teste de submissão da proposta.
 2. O teste Cypress deve entrar na área de criação da proposta, preenchendo todos os campos da Proposta e então realizando a submissão da proposta.
 
 **Resultado esperado:**
@@ -303,7 +340,7 @@ Após a realização do Teste Cypress se espera que a Proposta tenha sido criada
 
 ### Solicitação:
 
-1. A partir do Edital Completo criado com status "em Andamento" (visualizado na Home do sistema: Seção `Editais`), crie um teste de submissão da proposta. 
+1. A partir do Edital Completo criado com status "em Andamento" (visualizado na Home do sistema: Seção `Editais`), crie um teste de submissão da proposta.
 2. O teste Cypress deve entrar na área de criação da proposta, preenchendo todos os campos da Proposta e então realizando a submissão da proposta.
 
 **Resultado esperado:**
@@ -315,5 +352,3 @@ Após a realização do Teste Cypress se espera que a Proposta tenha sido criada
 # Entregas
 
 1. O Aluno/Grupo deve entregar os arquivos `edital-medio.cy.ts` e `edital-completo.cy.ts` e demais arquivos complementares<u>, se houverem,</u> dentro de suas respectivas pastas, em sua Fork de desenvolvimento.
-
-
